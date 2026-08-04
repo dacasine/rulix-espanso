@@ -1,0 +1,354 @@
+# Rulix Espanso - Fedlex DE
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+matches:
+  - trigger: "$sr"
+    label: "Fedlex DE: choisir une loi"
+    replace: "{{rulix_fedlex_citation}}"
+    vars:
+      - name: rulix_fedlex_choice
+        type: choice
+        params:
+          values:
+            - "cst|BV - Bundesverfassung der Schweizerischen Eidgenossenschaft - SR 101"
+            - "cc|ZGB - Schweizerisches Zivilgesetzbuch - SR 210"
+            - "co|OR - Obligationenrecht - SR 220"
+            - "cpc|ZPO - Schweizerische Zivilprozessordnung - SR 272"
+            - "cp|StGB - Schweizerisches Strafgesetzbuch - SR 311.0"
+            - "cpp|StPO - Schweizerische Strafprozessordnung - SR 312.0"
+            - "lpa|VwVG - Bundesgesetz über das Verwaltungsverfahren - SR 172.021"
+            - "ltf|BGG - Bundesgerichtsgesetz - SR 173.110"
+            - "taf|VGG - Verwaltungsgerichtsgesetz - SR 173.32"
+            - "loap|StBOG - Bundesgesetz über die Organisation der Strafbehörden des Bundes - SR 173.71"
+            - "lpd|DSG - Bundesgesetz über den Datenschutz - SR 235.1"
+            - "lcd|UWG - Bundesgesetz gegen den unlauteren Wettbewerb - SR 241"
+            - "ldip|IPRG - Bundesgesetz über das Internationale Privatrecht - SR 291"
+            - "letr|AIG - Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration - SR 142.20"
+            - "lasi|AsylG - Asylgesetz - SR 142.31"
+            - "lavi|OHG - Bundesgesetz über die Hilfe an Opfer von Straftaten - SR 312.5"
+            - "larm|WG - Waffengesetz - SR 514.54"
+            - "lcart|KG - Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen - SR 251"
+            - "lp|SchKG - Bundesgesetz über Schuldbetreibung und Konkurs - SR 281.1"
+            - "lfaie|BewG - Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland - SR 211.412.41"
+            - "lpart|PartG - Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare - SR 211.231"
+            - "loe|VZG - Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken - SR 281.42"
+            - "oelp|GebV SchKG - Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs - SR 281.35"
+            - "obi|PatV - Patentverordnung - SR 232.141"
+            - "lpdif|BGÖ - Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung - SR 152.3"
+            - "lpp|BVG - Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge - SR 831.40"
+            - "opp2|BVV 2 - Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge - SR 831.441.1"
+            - "olp|FZV - Freizügigkeitsverordnung - SR 831.425"
+            - "lflp|FZG - Freizügigkeitsgesetz - SR 831.42"
+            - "lamal|KVG - Bundesgesetz über die Krankenversicherung - SR 832.10"
+            - "lca|VVG - Bundesgesetz über den Versicherungsvertrag - SR 221.229.1"
+            - "lpaa|ATSG - Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts - SR 830.1"
+            - "lavs|AHVG - Bundesgesetz über die Alters- und Hinterlassenenversicherung - SR 831.10"
+            - "lai|IVG - Bundesgesetz über die Invalidenversicherung - SR 831.20"
+            - "lpc|ELG - Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung - SR 831.30"
+            - "lpers|BPG - Bundespersonalgesetz - SR 172.220.1"
+            - "lcr|SVG - Strassenverkehrsgesetz - SR 741.01"
+            - "ocr|VRV - Verkehrsregelnverordnung - SR 741.11"
+            - "oac|VZV - Verkehrszulassungsverordnung - SR 741.51"
+            - "lifd|DBG - Bundesgesetz über die direkte Bundessteuer - SR 642.11"
+            - "lhid|StHG - Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden - SR 642.14"
+            - "ltva|MWSTG - Mehrwertsteuergesetz - SR 641.20"
+            - "co2|CO2 - Bundesgesetz über die Reduktion der CO2-Emissionen - SR 641.71"
+            - "leaux|GSchG - Gewässerschutzgesetz - SR 814.20"
+            - "lpe|USG - Umweltschutzgesetz - SR 814.01"
+            - "lat|RPG - Raumplanungsgesetz - SR 700"
+            - "lfo|WaG - Waldgesetz - SR 921.0"
+            - "lchp|JSG - Jagdgesetz - SR 922.0"
+            - "lpn|NHG - Bundesgesetz über den Natur- und Heimatschutz - SR 451"
+            - "laam|MG - Militärgesetz - SR 510.10"
+            - "lmp|BöB - Bundesgesetz über das öffentliche Beschaffungswesen - SR 172.056.1"
+            - "lsa|VAG - Versicherungsaufsichtsgesetz - SR 961.01"
+            - "lhand|BehiG - Behindertengleichstellungsgesetz - SR 151.3"
+            - "cedh|EMRK - Konvention zum Schutze der Menschenrechte und Grundfreiheiten - SR 0.101"
+            - "onu2|UNO-Pakt II - Internationaler Pakt über bürgerliche und politische Rechte - SR 0.103.2"
+            - "onu1|UNO-Pakt I - Internationaler Pakt über wirtschaftliche, soziale und kulturelle Rechte - SR 0.103.1"
+            - "cvdt|WVRK - Wiener Übereinkommen über das Recht der Verträge - SR 0.111"
+            - "cvrc|WÜK - Wiener Übereinkommen über konsularische Beziehungen - SR 0.191.02"
+            - "istanbul|Istanbul-Konvention - Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt - SR 0.311.35"
+            - "clah80|HKÜ 1980 - Haager Übereinkommen über die zivilrechtlichen Aspekte internationaler Kindesentführung - SR 0.211.230.02"
+            - "clah96|HKsÜ 1996 - Haager Kindesschutzübereinkommen - SR 0.211.231.011"
+            - "clahadult|HEsÜ Erwachsenenschutz - Haager Erwachsenenschutzübereinkommen - SR 0.211.232.1"
+            - "clahalim|HUÜ Unterhalt - Haager Unterhaltsübereinkommen - SR 0.211.213.02"
+            - "clahproc|HZPÜ - Haager Übereinkommen betreffend Zivilprozessrecht - SR 0.274.12"
+            - "clahapostille|Apostille-Übereinkommen - Haager Apostille-Übereinkommen - SR 0.172.030.4"
+            - "clug|LugÜ - Lugano-Übereinkommen - SR 0.275.12"
+      - name: rulix_fedlex_citation
+        type: shell
+        params:
+          cmd: "ruby \\\"$HOME/Library/Application Support/espanso/scripts/rulix_fedlex.rb\\\" citation de \\\"{{rulix_fedlex_choice}}\\\""
+
+  - regex: "(?P<rulix_law>apostillebereinkommen|clahprotectionadultes|convenzionediistanbul|claaprotezioneadulti|heserwachsenenschutz|claaproceduracivile|conventiondistanbul|clahprocdurecivile|istanbulkonvention|claaapostille|clahapostille|claaalimenti|clahaliments|huunterhalt|pacteonuii|pattoonuii|clahadult|gebvschkg|pacteonui|pattoonui|unopaktii|claa1980|claa1996|clah1980|clah1996|clahalim|clahproc|istanbul|unopakti|hks1996|clah80|clah96|hk1980|ltrans|asylg|behig|gschg|lamal|lapub|lcart|lcstr|leaux|lfaie|lhand|lpamb|lpart|lpdif|lpers|lstri|ltras|mwstg|otlef|partg|schkg|stbog|ahvg|atsg|bewg|bvv2|cedh|cedu|clug|cost|cvdt|cvrc|emrk|iprg|laam|lafe|laid|larm|lasi|lavi|lavs|lchp|lcsl|ldip|ldis|letr|lflp|lhid|lifd|liva|loap|lpaa|lpac|lpga|ltaf|ltva|oelp|onu1|onu2|opp2|orfi|patv|stgb|sthg|stpo|vwvg|wvrk|aig|bgg|bpg|bvg|co2|cpc|cpp|cst|dbg|dsg|elg|fzg|fzv|hzp|ivg|jsg|kvg|lai|lat|lav|lca|lcd|lcp|lcr|lef|lei|lfo|lmp|loe|lpa|lpc|lpd|lpe|lpn|lpp|lpt|lsa|ltf|lud|lug|nhg|oac|obi|ocr|ohg|olp|onc|rff|rpg|svg|taf|usg|uwg|vag|vgg|vrv|vvg|vzg|vzv|wag|zgb|zpo|bb|bg|bv|cc|cl|co|cp|kg|lm|lp|mg|or|pa|wg|wk)(?P<rulix_ref>\\d+[a-z0-9]*)\\s"
+    label: "Fedlex DE: article"
+    replace: "{{rulix_fedlex_article}}"
+    vars:
+      - name: rulix_fedlex_article
+        type: shell
+        params:
+          cmd: "ruby \\\"$HOME/Library/Application Support/espanso/scripts/rulix_fedlex.rb\\\" article de \\\"{{rulix_law}}\\\" \\\"{{rulix_ref}}\\\""
+
+  - trigger: "srbv"
+    label: "SR 101 - BV"
+    markdown: "Bundesverfassung der Schweizerischen Eidgenossenschaft (nachfolgend BV, [SR 101](https://www.fedlex.admin.ch/de/cc/internal-law/101))"
+
+  - trigger: "srzgb"
+    label: "SR 210 - ZGB"
+    markdown: "Schweizerisches Zivilgesetzbuch (nachfolgend ZGB, [SR 210](https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de))"
+
+  - trigger: "sror"
+    label: "SR 220 - OR"
+    markdown: "Obligationenrecht (nachfolgend OR, [SR 220](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de))"
+
+  - trigger: "srzpo"
+    label: "SR 272 - ZPO"
+    markdown: "Schweizerische Zivilprozessordnung (nachfolgend ZPO, [SR 272](https://www.fedlex.admin.ch/de/cc/internal-law/272))"
+
+  - trigger: "srstgb"
+    label: "SR 311.0 - StGB"
+    markdown: "Schweizerisches Strafgesetzbuch (nachfolgend StGB, [SR 311.0](https://www.fedlex.admin.ch/de/cc/internal-law/311.0))"
+
+  - trigger: "srstpo"
+    label: "SR 312.0 - StPO"
+    markdown: "Schweizerische Strafprozessordnung (nachfolgend StPO, [SR 312.0](https://www.fedlex.admin.ch/de/cc/internal-law/312.0))"
+
+  - trigger: "srvwvg"
+    label: "SR 172.021 - VwVG"
+    markdown: "Bundesgesetz über das Verwaltungsverfahren (nachfolgend VwVG, [SR 172.021](https://www.fedlex.admin.ch/de/cc/internal-law/172.021))"
+
+  - trigger: "srbgg"
+    label: "SR 173.110 - BGG"
+    markdown: "Bundesgerichtsgesetz (nachfolgend BGG, [SR 173.110](https://www.fedlex.admin.ch/de/cc/internal-law/173.110))"
+
+  - trigger: "srvgg"
+    label: "SR 173.32 - VGG"
+    markdown: "Verwaltungsgerichtsgesetz (nachfolgend VGG, [SR 173.32](https://www.fedlex.admin.ch/de/cc/internal-law/173.32))"
+
+  - trigger: "srstbog"
+    label: "SR 173.71 - StBOG"
+    markdown: "Bundesgesetz über die Organisation der Strafbehörden des Bundes (nachfolgend StBOG, [SR 173.71](https://www.fedlex.admin.ch/de/cc/internal-law/173.71))"
+
+  - trigger: "srdsg"
+    label: "SR 235.1 - DSG"
+    markdown: "Bundesgesetz über den Datenschutz (nachfolgend DSG, [SR 235.1](https://www.fedlex.admin.ch/de/cc/internal-law/235.1))"
+
+  - trigger: "sruwg"
+    label: "SR 241 - UWG"
+    markdown: "Bundesgesetz gegen den unlauteren Wettbewerb (nachfolgend UWG, [SR 241](https://www.fedlex.admin.ch/de/cc/internal-law/241))"
+
+  - trigger: "sriprg"
+    label: "SR 291 - IPRG"
+    markdown: "Bundesgesetz über das Internationale Privatrecht (nachfolgend IPRG, [SR 291](https://www.fedlex.admin.ch/de/cc/internal-law/291))"
+
+  - trigger: "sraig"
+    label: "SR 142.20 - AIG"
+    markdown: "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (nachfolgend AIG, [SR 142.20](https://www.fedlex.admin.ch/de/cc/internal-law/142.20))"
+
+  - trigger: "srasylg"
+    label: "SR 142.31 - AsylG"
+    markdown: "Asylgesetz (nachfolgend AsylG, [SR 142.31](https://www.fedlex.admin.ch/de/cc/internal-law/142.31))"
+
+  - trigger: "srohg"
+    label: "SR 312.5 - OHG"
+    markdown: "Bundesgesetz über die Hilfe an Opfer von Straftaten (nachfolgend OHG, [SR 312.5](https://www.fedlex.admin.ch/de/cc/internal-law/312.5))"
+
+  - trigger: "srwg"
+    label: "SR 514.54 - WG"
+    markdown: "Waffengesetz (nachfolgend WG, [SR 514.54](https://www.fedlex.admin.ch/de/cc/internal-law/514.54))"
+
+  - trigger: "srkg"
+    label: "SR 251 - KG"
+    markdown: "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (nachfolgend KG, [SR 251](https://www.fedlex.admin.ch/de/cc/internal-law/251))"
+
+  - trigger: "srschkg"
+    label: "SR 281.1 - SchKG"
+    markdown: "Bundesgesetz über Schuldbetreibung und Konkurs (nachfolgend SchKG, [SR 281.1](https://www.fedlex.admin.ch/de/cc/internal-law/281.1))"
+
+  - trigger: "srbewg"
+    label: "SR 211.412.41 - BewG"
+    markdown: "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (nachfolgend BewG, [SR 211.412.41](https://www.fedlex.admin.ch/de/cc/internal-law/211.412.41))"
+
+  - trigger: "srpartg"
+    label: "SR 211.231 - PartG"
+    markdown: "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (nachfolgend PartG, [SR 211.231](https://www.fedlex.admin.ch/de/cc/internal-law/211.231))"
+
+  - trigger: "srvzg"
+    label: "SR 281.42 - VZG"
+    markdown: "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken (nachfolgend VZG, [SR 281.42](https://www.fedlex.admin.ch/de/cc/internal-law/281.42))"
+
+  - trigger: "srgebvschkg"
+    label: "SR 281.35 - GebV SchKG"
+    markdown: "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs (nachfolgend GebV SchKG, [SR 281.35](https://www.fedlex.admin.ch/de/cc/internal-law/281.35))"
+
+  - trigger: "srpatv"
+    label: "SR 232.141 - PatV"
+    markdown: "Patentverordnung (nachfolgend PatV, [SR 232.141](https://www.fedlex.admin.ch/de/cc/internal-law/232.141))"
+
+  - trigger: "srbg"
+    label: "SR 152.3 - BGÖ"
+    markdown: "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (nachfolgend BGÖ, [SR 152.3](https://www.fedlex.admin.ch/de/cc/internal-law/152.3))"
+
+  - trigger: "srbvg"
+    label: "SR 831.40 - BVG"
+    markdown: "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (nachfolgend BVG, [SR 831.40](https://www.fedlex.admin.ch/de/cc/internal-law/831.40))"
+
+  - trigger: "srbvv2"
+    label: "SR 831.441.1 - BVV 2"
+    markdown: "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (nachfolgend BVV 2, [SR 831.441.1](https://www.fedlex.admin.ch/de/cc/internal-law/831.441.1))"
+
+  - trigger: "srfzv"
+    label: "SR 831.425 - FZV"
+    markdown: "Freizügigkeitsverordnung (nachfolgend FZV, [SR 831.425](https://www.fedlex.admin.ch/de/cc/internal-law/831.425))"
+
+  - trigger: "srfzg"
+    label: "SR 831.42 - FZG"
+    markdown: "Freizügigkeitsgesetz (nachfolgend FZG, [SR 831.42](https://www.fedlex.admin.ch/de/cc/internal-law/831.42))"
+
+  - trigger: "srkvg"
+    label: "SR 832.10 - KVG"
+    markdown: "Bundesgesetz über die Krankenversicherung (nachfolgend KVG, [SR 832.10](https://www.fedlex.admin.ch/de/cc/internal-law/832.10))"
+
+  - trigger: "srvvg"
+    label: "SR 221.229.1 - VVG"
+    markdown: "Bundesgesetz über den Versicherungsvertrag (nachfolgend VVG, [SR 221.229.1](https://www.fedlex.admin.ch/de/cc/internal-law/221.229.1))"
+
+  - trigger: "sratsg"
+    label: "SR 830.1 - ATSG"
+    markdown: "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (nachfolgend ATSG, [SR 830.1](https://www.fedlex.admin.ch/de/cc/internal-law/830.1))"
+
+  - trigger: "srahvg"
+    label: "SR 831.10 - AHVG"
+    markdown: "Bundesgesetz über die Alters- und Hinterlassenenversicherung (nachfolgend AHVG, [SR 831.10](https://www.fedlex.admin.ch/de/cc/internal-law/831.10))"
+
+  - trigger: "srivg"
+    label: "SR 831.20 - IVG"
+    markdown: "Bundesgesetz über die Invalidenversicherung (nachfolgend IVG, [SR 831.20](https://www.fedlex.admin.ch/de/cc/internal-law/831.20))"
+
+  - trigger: "srelg"
+    label: "SR 831.30 - ELG"
+    markdown: "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (nachfolgend ELG, [SR 831.30](https://www.fedlex.admin.ch/de/cc/internal-law/831.30))"
+
+  - trigger: "srbpg"
+    label: "SR 172.220.1 - BPG"
+    markdown: "Bundespersonalgesetz (nachfolgend BPG, [SR 172.220.1](https://www.fedlex.admin.ch/de/cc/internal-law/172.220.1))"
+
+  - trigger: "srsvg"
+    label: "SR 741.01 - SVG"
+    markdown: "Strassenverkehrsgesetz (nachfolgend SVG, [SR 741.01](https://www.fedlex.admin.ch/de/cc/internal-law/741.01))"
+
+  - trigger: "srvrv"
+    label: "SR 741.11 - VRV"
+    markdown: "Verkehrsregelnverordnung (nachfolgend VRV, [SR 741.11](https://www.fedlex.admin.ch/de/cc/internal-law/741.11))"
+
+  - trigger: "srvzv"
+    label: "SR 741.51 - VZV"
+    markdown: "Verkehrszulassungsverordnung (nachfolgend VZV, [SR 741.51](https://www.fedlex.admin.ch/de/cc/internal-law/741.51))"
+
+  - trigger: "srdbg"
+    label: "SR 642.11 - DBG"
+    markdown: "Bundesgesetz über die direkte Bundessteuer (nachfolgend DBG, [SR 642.11](https://www.fedlex.admin.ch/de/cc/internal-law/642.11))"
+
+  - trigger: "srsthg"
+    label: "SR 642.14 - StHG"
+    markdown: "Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (nachfolgend StHG, [SR 642.14](https://www.fedlex.admin.ch/de/cc/internal-law/642.14))"
+
+  - trigger: "srmwstg"
+    label: "SR 641.20 - MWSTG"
+    markdown: "Mehrwertsteuergesetz (nachfolgend MWSTG, [SR 641.20](https://www.fedlex.admin.ch/de/cc/internal-law/641.20))"
+
+  - trigger: "srco2"
+    label: "SR 641.71 - CO2"
+    markdown: "Bundesgesetz über die Reduktion der CO2-Emissionen (nachfolgend CO2, [SR 641.71](https://www.fedlex.admin.ch/de/cc/internal-law/641.71))"
+
+  - trigger: "srgschg"
+    label: "SR 814.20 - GSchG"
+    markdown: "Gewässerschutzgesetz (nachfolgend GSchG, [SR 814.20](https://www.fedlex.admin.ch/de/cc/internal-law/814.20))"
+
+  - trigger: "srusg"
+    label: "SR 814.01 - USG"
+    markdown: "Umweltschutzgesetz (nachfolgend USG, [SR 814.01](https://www.fedlex.admin.ch/de/cc/internal-law/814.01))"
+
+  - trigger: "srrpg"
+    label: "SR 700 - RPG"
+    markdown: "Raumplanungsgesetz (nachfolgend RPG, [SR 700](https://www.fedlex.admin.ch/de/cc/internal-law/700))"
+
+  - trigger: "srwag"
+    label: "SR 921.0 - WaG"
+    markdown: "Waldgesetz (nachfolgend WaG, [SR 921.0](https://www.fedlex.admin.ch/de/cc/internal-law/921.0))"
+
+  - trigger: "srjsg"
+    label: "SR 922.0 - JSG"
+    markdown: "Jagdgesetz (nachfolgend JSG, [SR 922.0](https://www.fedlex.admin.ch/de/cc/internal-law/922.0))"
+
+  - trigger: "srnhg"
+    label: "SR 451 - NHG"
+    markdown: "Bundesgesetz über den Natur- und Heimatschutz (nachfolgend NHG, [SR 451](https://www.fedlex.admin.ch/de/cc/internal-law/451))"
+
+  - trigger: "srmg"
+    label: "SR 510.10 - MG"
+    markdown: "Militärgesetz (nachfolgend MG, [SR 510.10](https://www.fedlex.admin.ch/de/cc/internal-law/510.10))"
+
+  - trigger: "srbb"
+    label: "SR 172.056.1 - BöB"
+    markdown: "Bundesgesetz über das öffentliche Beschaffungswesen (nachfolgend BöB, [SR 172.056.1](https://www.fedlex.admin.ch/de/cc/internal-law/172.056.1))"
+
+  - trigger: "srvag"
+    label: "SR 961.01 - VAG"
+    markdown: "Versicherungsaufsichtsgesetz (nachfolgend VAG, [SR 961.01](https://www.fedlex.admin.ch/de/cc/internal-law/961.01))"
+
+  - trigger: "srbehig"
+    label: "SR 151.3 - BehiG"
+    markdown: "Behindertengleichstellungsgesetz (nachfolgend BehiG, [SR 151.3](https://www.fedlex.admin.ch/de/cc/internal-law/151.3))"
+
+  - trigger: "sremrk"
+    label: "SR 0.101 - EMRK"
+    markdown: "Konvention zum Schutze der Menschenrechte und Grundfreiheiten (nachfolgend EMRK, [SR 0.101](https://www.fedlex.admin.ch/de/cc/internal-law/0.101))"
+
+  - trigger: "srunopaktii"
+    label: "SR 0.103.2 - UNO-Pakt II"
+    markdown: "Internationaler Pakt über bürgerliche und politische Rechte (nachfolgend UNO-Pakt II, [SR 0.103.2](https://www.fedlex.admin.ch/de/cc/internal-law/0.103.2))"
+
+  - trigger: "srunopakti"
+    label: "SR 0.103.1 - UNO-Pakt I"
+    markdown: "Internationaler Pakt über wirtschaftliche, soziale und kulturelle Rechte (nachfolgend UNO-Pakt I, [SR 0.103.1](https://www.fedlex.admin.ch/de/cc/internal-law/0.103.1))"
+
+  - trigger: "srwvrk"
+    label: "SR 0.111 - WVRK"
+    markdown: "Wiener Übereinkommen über das Recht der Verträge (nachfolgend WVRK, [SR 0.111](https://www.fedlex.admin.ch/de/cc/internal-law/0.111))"
+
+  - trigger: "srwk"
+    label: "SR 0.191.02 - WÜK"
+    markdown: "Wiener Übereinkommen über konsularische Beziehungen (nachfolgend WÜK, [SR 0.191.02](https://www.fedlex.admin.ch/de/cc/internal-law/0.191.02))"
+
+  - trigger: "sristanbulkonvention"
+    label: "SR 0.311.35 - Istanbul-Konvention"
+    markdown: "Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (nachfolgend Istanbul-Konvention, [SR 0.311.35](https://www.fedlex.admin.ch/de/cc/internal-law/0.311.35))"
+
+  - trigger: "srhk1980"
+    label: "SR 0.211.230.02 - HKÜ 1980"
+    markdown: "Haager Übereinkommen über die zivilrechtlichen Aspekte internationaler Kindesentführung (nachfolgend HKÜ 1980, [SR 0.211.230.02](https://www.fedlex.admin.ch/de/cc/internal-law/0.211.230.02))"
+
+  - trigger: "srhks1996"
+    label: "SR 0.211.231.011 - HKsÜ 1996"
+    markdown: "Haager Kindesschutzübereinkommen (nachfolgend HKsÜ 1996, [SR 0.211.231.011](https://www.fedlex.admin.ch/de/cc/internal-law/0.211.231.011))"
+
+  - trigger: "srheserwachsenenschutz"
+    label: "SR 0.211.232.1 - HEsÜ Erwachsenenschutz"
+    markdown: "Haager Erwachsenenschutzübereinkommen (nachfolgend HEsÜ Erwachsenenschutz, [SR 0.211.232.1](https://www.fedlex.admin.ch/de/cc/internal-law/0.211.232.1))"
+
+  - trigger: "srhuunterhalt"
+    label: "SR 0.211.213.02 - HUÜ Unterhalt"
+    markdown: "Haager Unterhaltsübereinkommen (nachfolgend HUÜ Unterhalt, [SR 0.211.213.02](https://www.fedlex.admin.ch/de/cc/internal-law/0.211.213.02))"
+
+  - trigger: "srhzp"
+    label: "SR 0.274.12 - HZPÜ"
+    markdown: "Haager Übereinkommen betreffend Zivilprozessrecht (nachfolgend HZPÜ, [SR 0.274.12](https://www.fedlex.admin.ch/de/cc/internal-law/0.274.12))"
+
+  - trigger: "srapostillebereinkommen"
+    label: "SR 0.172.030.4 - Apostille-Übereinkommen"
+    markdown: "Haager Apostille-Übereinkommen (nachfolgend Apostille-Übereinkommen, [SR 0.172.030.4](https://www.fedlex.admin.ch/de/cc/internal-law/0.172.030.4))"
+
+  - trigger: "srlug"
+    label: "SR 0.275.12 - LugÜ"
+    markdown: "Lugano-Übereinkommen (nachfolgend LugÜ, [SR 0.275.12](https://www.fedlex.admin.ch/de/cc/internal-law/0.275.12))"
