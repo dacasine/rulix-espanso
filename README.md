@@ -8,7 +8,9 @@ Copier le script et le ou les fichiers de langue voulus dans la configuration Es
 
 ```sh
 cp espanso/scripts/rulix_fedlex.rb "$HOME/Library/Application Support/espanso/scripts/"
+cp espanso/scripts/rulix_cantonal.rb "$HOME/Library/Application Support/espanso/scripts/"
 cp espanso/match/rulix-fedlex-fr.yml "$HOME/Library/Application Support/espanso/match/"
+cp espanso/match/rulix-cantonal-fr.yml "$HOME/Library/Application Support/espanso/match/"
 espanso service restart
 ```
 
@@ -28,13 +30,28 @@ Les références d'article acceptent aussi les suffixes usuels :
 
 Les liens pointent vers l'article, pas vers l'alinéa.
 
+## Législation cantonale GE/VD/VS
+
+Le fichier `rulix-cantonal-fr.yml` ajoute les textes cantonaux genevois, vaudois et valaisans dotés d'un sigle.
+
+Exemples :
+
+- `rsvslacc` -> citation complète de la LACC valaisanne avec lien RS/VS.
+- `vslacc1i ` -> `art. 1 al. 1 LACC/VS` avec lien vers l'acte officiel.
+- `rsgelacc` / `gelacc1i ` fonctionnent selon le même principe pour Genève, avec les clés générées depuis les sigles officiels.
+- `$rsc` ouvre un menu de recherche dans les textes cantonaux.
+
+Les sites cantonaux ne fournissent pas tous des ancres d'article stables. Les références d'article cantonales lient donc vers l'acte officiel, plutôt que vers une ancre fragile.
+
 ## Structure
 
 - `espanso/match/rulix-fedlex-fr.yml` : snippets français.
 - `espanso/match/rulix-fedlex-de.yml` : snippets allemands.
 - `espanso/match/rulix-fedlex-it.yml` : snippets italiens.
-- `espanso/scripts/rulix_fedlex.rb` : moteur local pour les citations et références d'articles.
-- `data/laws.psv` : table source éditable.
+- `espanso/scripts/rulix_fedlex.rb` : moteur local pour les citations et références d'articles fédérales.
+- `espanso/scripts/rulix_cantonal.rb` : moteur local pour les citations et références d'articles cantonales.
+- `data/laws.psv` : table source fédérale éditable.
+- `data/cantonal_laws.psv` : table source cantonale éditable.
 
 ## Sources
 
