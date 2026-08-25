@@ -650,7 +650,7 @@ def write_yaml(laws: list[Law], ui_lang: str) -> None:
         f'        params:\n          cmd: {yaml_scalar("ruby \"$HOME/Library/Application Support/espanso/scripts/rulix_cantonal.rb\" citation \"{{rulix_cantonal_choice}}\"")}',
     ]
     for law in selected:
-        prefix = f'{static_prefix}{law.canton.lower()}{law.key}'
+        prefix = f'{static_prefix}{law.canton.lower()}{law.key} '
         citation = f'ruby "$HOME/Library/Application Support/espanso/scripts/rulix_cantonal.rb" citation "{law.lang}|{law.canton}|{law.key}"'
         lines.extend([
             f'  - trigger: {yaml_scalar(prefix)}',

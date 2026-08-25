@@ -39,15 +39,15 @@ Les liens pointent vers l'article, pas vers l'alinéa.
 Exemples français :
 
 - `$rsc` ouvre un menu de recherche dans les textes cantonaux.
-- `rsvslacc` -> citation complète de la LACC valaisanne avec lien RS/VS.
+- `rsvslacc ` -> citation complète de la LACC valaisanne avec lien RS/VS.
 - `vslacc1i ` -> `art. 1 al. 1 LACC/VS` avec lien vers l'acte officiel.
-- `rsvdcstvd` -> citation complète de la Constitution vaudoise avec lien BLV.
+- `rsvdcstvd ` -> citation complète de la Constitution vaudoise avec lien BLV.
 - `vdcstvd1i ` -> `art. 1 al. 1 Cst-VD/VD` avec lien vers l'acte officiel.
 
 Exemples allemands :
 
 - `$src` ouvre le menu cantonal allemand.
-- `srbehg` -> citation complète de la loi bernoise `HG/BE`.
+- `srbehg ` -> citation complète de la loi bernoise `HG/BE`.
 - `bevrpg12iia3 ` -> `Art. 12 Abs. 2 lit. a Ziff. 3 VRPG/BE` avec lien vers l'acte officiel.
 
 Les sites cantonaux ne fournissent pas tous des ancres d'article stables. Les références d'article cantonales ajoutent une ancre `#art_N` quand elle est plausible, mais le lien reste principalement un lien vers l'acte officiel.
