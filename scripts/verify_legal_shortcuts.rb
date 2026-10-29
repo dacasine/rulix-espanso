@@ -8,7 +8,9 @@ matches = Dir[File.join(root, 'espanso/match/*.yml')].flat_map do |path|
     abort "Trigger without space in #{path}: #{m['trigger']}" if m['trigger'] && !m['trigger'].end_with?(' ')
     abort "Regex without space in #{path}" if m['regex'] && !m['regex'].end_with?(' ')
   end
-  File.basename(path).start_with?('_') ? [] : rows
+  # One workstation installs one language profile; audit delimiters in every file.
+  inactive = File.basename(path).start_with?('_') || path.match?(/-(?:de|it)(?:-links)?\.yml\z/)
+  inactive ? [] : rows
 end
 
 def expand(matches, typed, root)
@@ -58,4 +60,18 @@ end
     abort "Early regex: #{unfinished}" if Regexp.new(m['regex'].gsub('(?P<', '(?<')).match?(unfinished)
   end
 end
+
+# Espanso searches for suffix matches, not only whole-string matches.
+# Normal article rules must not also match inside l-prefixed or cantonal ones.
+legal_regexes = matches.select { |m| m['regex'] && m['regex'].match?(/fedlex_law|rulix_law/) }
+%w[lcc1i cc1i lvslacc1i vslacc1i].each do |shortcut|
+  ['', ' '].each do |prefix|
+    input = prefix + shortcut + ' '
+    hits = legal_regexes.select { |m| Regexp.new(m['regex'].gsub('(?P<', '(?<')).match?(input) }
+    abort "Overlapping article rules for #{input.inspect}: #{hits.length}" unless hits.length == 1
+  end
+  input = 'x' + shortcut + ' '
+  abort "Article inside a word: #{input}" if legal_regexes.any? { |m| Regexp.new(m['regex'].gsub('(?P<', '(?<')).match?(input) }
+end
+puts 'Article boundaries OK: one candidate at start/after space, none inside words'
 puts "All #{matches.size} matches wait for a space; link examples OK"

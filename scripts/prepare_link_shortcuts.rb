@@ -59,6 +59,9 @@ Dir[match_dir.join('*.yml')].sort.each do |file|
     elsif parsed['regex']
       regex = parsed['regex'].sub(/\\s\z/, ' ')
       regex += ' ' unless regex.end_with?(' ')
+      if regex.match?(/fedlex_law|rulix_law/) && !regex.start_with?('\\b')
+        regex = '\\b' + regex
+      end
       block = block.sub(/^  - regex: .*$/) { "  - regex: #{JSON.generate(regex)}" }
       if parsed.key?('left_word')
         block = block.sub(/^    left_word: .*$/, '    left_word: true')
@@ -97,7 +100,7 @@ Dir[match_dir.join('*.yml')].sort.each do |file|
       end
       link
     elsif match['regex'] && match['regex'].match?(/fedlex_law|rulix_law/) && match['vars']
-      link = { 'regex' => 'l' + match['regex'], 'left_word' => true,
+      link = { 'regex' => '\\bl' + match['regex'].delete_prefix('\\b'), 'left_word' => true,
                'replace' => "{{rulix_link_url}}\n",
                'vars' => Marshal.load(Marshal.dump(match['vars'])) }
       shell = link['vars'].find { |var| var['type'] == 'shell' }
