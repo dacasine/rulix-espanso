@@ -76,3 +76,30 @@ Les URLs cantonales sont construites depuis les portails officiels cantonaux dis
 CC BY-NC-SA 4.0. Voir `LICENSE`.
 
 Les métadonnées Fedlex/cantonales et les intitulés légaux doivent être vérifiés avant usage sensible. Ce dépôt fournit une base de travail pratique pour Espanso, pas une garantie d'exhaustivité juridique.
+
+## Ouverture Rapide Des Lois
+
+Toutes les expansions attendent un espace final, y compris les citations `rs…`,
+les articles et les menus. Les abréviations ordinaires de la configuration privée
+suivent également cette règle. L'espace saisi est consommé par le raccourci.
+
+Ajouter `l` devant une référence insère son URL seule, suivie d'un retour chariot :
+
+- `lcc1i ` : URL officielle de l'article 1 CC (l'alinéa reste dans la référence, le lien vise l'article).
+- `lrscc ` : URL officielle du Code civil.
+- `lrsvdlatc ` : URL officielle de la LATC vaudoise.
+- `lvslacc1i ` : URL de la LACC valaisanne, avec ancre d'article si le moteur existant la fournit.
+
+Ces raccourcis peuvent être saisis dans la barre d'adresse du navigateur.
+Les variantes réutilisent les URLs des moteurs existants et leur précision.
+
+Installer aussi `espanso/scripts/legal_link.rb` et, pour chaque langue activée,
+les fichiers `*-links.yml` correspondants. Sur un poste francophone, inclure
+`rulix-fedlex-fr-links.yml` et `rulix-cantonal-fr-links.yml` du dépôt public.
+Dans la configuration privée, inclure `base-links.yml`, `fedlex-links.yml` et
+`rulix-cantonal-fr-links.yml`. Les fichiers allemands et italiens restent optionnels.
+
+Après toute régénération manuelle des fichiers de correspondances, lancer
+`ruby scripts/prepare_link_shortcuts.rb`. Le générateur cantonal public le lance
+automatiquement. Ce script conserve les commentaires des fichiers existants,
+ajoute les délimiteurs et régénère les variantes `l…`.

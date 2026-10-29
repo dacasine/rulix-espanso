@@ -1,9 +1,9 @@
 # Rulix Espanso - Fedlex FR
 # SPDX-License-Identifier: CC-BY-NC-SA-4.0
 matches:
-  - trigger: "$rs"
+  - trigger: "$rs "
     label: "Fedlex FR: choisir une loi"
-    replace: "{{rulix_fedlex_citation}}"
+    replace: "{{rulix_fedlex_citation}} "
     vars:
       - name: rulix_fedlex_choice
         type: choice
@@ -80,7 +80,8 @@ matches:
         params:
           cmd: "ruby \\\"$HOME/Library/Application Support/espanso/scripts/rulix_fedlex.rb\\\" citation fr \\\"{{rulix_fedlex_choice}}\\\""
 
-  - regex: "(?P<rulix_law>apostillebereinkommen|clahprotectionadultes|convenzionediistanbul|claaprotezioneadulti|heserwachsenenschutz|claaproceduracivile|conventiondistanbul|clahprocdurecivile|istanbulkonvention|claaapostille|clahapostille|claaalimenti|clahaliments|huunterhalt|pacteonuii|pattoonuii|clahadult|gebvschkg|pacteonui|pattoonui|unopaktii|claa1980|claa1996|clah1980|clah1996|clahalim|clahproc|istanbul|unopakti|hks1996|clah80|clah96|hk1980|ltrans|asylg|behig|gschg|lamal|lapub|lcart|lcstr|leaux|lfaie|lhand|lpamb|lpart|lpdif|lpers|lstri|ltras|mwstg|otlef|partg|schkg|stbog|ahvg|atsg|bewg|bvv2|cedh|cedu|clug|cost|cvdt|cvrc|emrk|iprg|laam|lafe|laid|larm|lasi|lavi|lavs|lchp|lcsl|ldip|ldis|letr|lflp|lhid|lifd|liva|loap|lpaa|lpac|lpga|ltaf|ltva|oelp|onu1|onu2|opp2|orfi|patv|stgb|sthg|stpo|vwvg|wvrk|aig|bgg|bpg|bvg|co2|cpc|cpp|cst|dbg|dsg|elg|fzg|fzv|hzp|ivg|jsg|kvg|lai|lat|lav|lca|lcd|lcp|lcr|lef|lei|lfo|lmp|loe|lpa|lpc|lpd|lpe|lpn|lpp|lpt|lsa|ltf|lud|lug|nhg|oac|obi|ocr|ohg|olp|onc|rff|rpg|svg|taf|usg|uwg|vag|vgg|vrv|vvg|vzg|vzv|wag|zgb|zpo|bb|bg|bv|cc|cl|co|cp|kg|lm|lp|mg|or|pa|wg|wk)(?P<rulix_ref>\\d+[a-z0-9]*)\\s"
+  - regex: "(?P<rulix_law>apostillebereinkommen|clahprotectionadultes|convenzionediistanbul|claaprotezioneadulti|heserwachsenenschutz|claaproceduracivile|conventiondistanbul|clahprocdurecivile|istanbulkonvention|claaapostille|clahapostille|claaalimenti|clahaliments|huunterhalt|pacteonuii|pattoonuii|clahadult|gebvschkg|pacteonui|pattoonui|unopaktii|claa1980|claa1996|clah1980|clah1996|clahalim|clahproc|istanbul|unopakti|hks1996|clah80|clah96|hk1980|ltrans|asylg|behig|gschg|lamal|lapub|lcart|lcstr|leaux|lfaie|lhand|lpamb|lpart|lpdif|lpers|lstri|ltras|mwstg|otlef|partg|schkg|stbog|ahvg|atsg|bewg|bvv2|cedh|cedu|clug|cost|cvdt|cvrc|emrk|iprg|laam|lafe|laid|larm|lasi|lavi|lavs|lchp|lcsl|ldip|ldis|letr|lflp|lhid|lifd|liva|loap|lpaa|lpac|lpga|ltaf|ltva|oelp|onu1|onu2|opp2|orfi|patv|stgb|sthg|stpo|vwvg|wvrk|aig|bgg|bpg|bvg|co2|cpc|cpp|cst|dbg|dsg|elg|fzg|fzv|hzp|ivg|jsg|kvg|lai|lat|lav|lca|lcd|lcp|lcr|lef|lei|lfo|lmp|loe|lpa|lpc|lpd|lpe|lpn|lpp|lpt|lsa|ltf|lud|lug|nhg|oac|obi|ocr|ohg|olp|onc|rff|rpg|svg|taf|usg|uwg|vag|vgg|vrv|vvg|vzg|vzv|wag|zgb|zpo|bb|bg|bv|cc|cl|co|cp|kg|lm|lp|mg|or|pa|wg|wk)(?P<rulix_ref>\\d+[a-z0-9]*) "
+    left_word: true
     label: "Fedlex FR: article"
     replace: "{{rulix_fedlex_article}}"
     vars:
@@ -89,266 +90,332 @@ matches:
         params:
           cmd: "ruby \\\"$HOME/Library/Application Support/espanso/scripts/rulix_fedlex.rb\\\" article fr \\\"{{rulix_law}}\\\" \\\"{{rulix_ref}}\\\""
 
-  - trigger: "rscst"
+  - trigger: "rscst "
+    left_word: true
     label: "RS 101 - Cst."
-    markdown: "Constitution fédérale de la Confédération suisse (ci-après Cst., [RS 101](https://www.fedlex.admin.ch/fr/cc/internal-law/101))"
+    markdown: "Constitution fédérale de la Confédération suisse (ci-après Cst., [RS 101](https://www.fedlex.admin.ch/fr/cc/internal-law/101)) "
 
-  - trigger: "rscc"
+  - trigger: "rscc "
+    left_word: true
     label: "RS 210 - CC"
-    markdown: "Code civil suisse (ci-après CC, [RS 210](https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr))"
+    markdown: "Code civil suisse (ci-après CC, [RS 210](https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr)) "
 
-  - trigger: "rsco"
+  - trigger: "rsco "
+    left_word: true
     label: "RS 220 - CO"
-    markdown: "Code des obligations (ci-après CO, [RS 220](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr))"
+    markdown: "Code des obligations (ci-après CO, [RS 220](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr)) "
 
-  - trigger: "rscpc"
+  - trigger: "rscpc "
+    left_word: true
     label: "RS 272 - CPC"
-    markdown: "Code de procédure civile suisse (ci-après CPC, [RS 272](https://www.fedlex.admin.ch/fr/cc/internal-law/272))"
+    markdown: "Code de procédure civile suisse (ci-après CPC, [RS 272](https://www.fedlex.admin.ch/fr/cc/internal-law/272)) "
 
-  - trigger: "rscp"
+  - trigger: "rscp "
+    left_word: true
     label: "RS 311.0 - CP"
-    markdown: "Code pénal suisse (ci-après CP, [RS 311.0](https://www.fedlex.admin.ch/fr/cc/internal-law/311.0))"
+    markdown: "Code pénal suisse (ci-après CP, [RS 311.0](https://www.fedlex.admin.ch/fr/cc/internal-law/311.0)) "
 
-  - trigger: "rscpp"
+  - trigger: "rscpp "
+    left_word: true
     label: "RS 312.0 - CPP"
-    markdown: "Code de procédure pénale suisse (ci-après CPP, [RS 312.0](https://www.fedlex.admin.ch/fr/cc/internal-law/312.0))"
+    markdown: "Code de procédure pénale suisse (ci-après CPP, [RS 312.0](https://www.fedlex.admin.ch/fr/cc/internal-law/312.0)) "
 
-  - trigger: "rslpa"
+  - trigger: "rslpa "
+    left_word: true
     label: "RS 172.021 - LPA"
-    markdown: "Loi fédérale sur la procédure administrative (ci-après LPA, [RS 172.021](https://www.fedlex.admin.ch/fr/cc/internal-law/172.021))"
+    markdown: "Loi fédérale sur la procédure administrative (ci-après LPA, [RS 172.021](https://www.fedlex.admin.ch/fr/cc/internal-law/172.021)) "
 
-  - trigger: "rsltf"
+  - trigger: "rsltf "
+    left_word: true
     label: "RS 173.110 - LTF"
-    markdown: "Loi sur le Tribunal fédéral (ci-après LTF, [RS 173.110](https://www.fedlex.admin.ch/fr/cc/internal-law/173.110))"
+    markdown: "Loi sur le Tribunal fédéral (ci-après LTF, [RS 173.110](https://www.fedlex.admin.ch/fr/cc/internal-law/173.110)) "
 
-  - trigger: "rsltaf"
+  - trigger: "rsltaf "
+    left_word: true
     label: "RS 173.32 - LTAF"
-    markdown: "Loi sur le Tribunal administratif fédéral (ci-après LTAF, [RS 173.32](https://www.fedlex.admin.ch/fr/cc/internal-law/173.32))"
+    markdown: "Loi sur le Tribunal administratif fédéral (ci-après LTAF, [RS 173.32](https://www.fedlex.admin.ch/fr/cc/internal-law/173.32)) "
 
-  - trigger: "rsloap"
+  - trigger: "rsloap "
+    left_word: true
     label: "RS 173.71 - LOAP"
-    markdown: "Loi sur l'organisation des autorités pénales (ci-après LOAP, [RS 173.71](https://www.fedlex.admin.ch/fr/cc/internal-law/173.71))"
+    markdown: "Loi sur l'organisation des autorités pénales (ci-après LOAP, [RS 173.71](https://www.fedlex.admin.ch/fr/cc/internal-law/173.71)) "
 
-  - trigger: "rslpd"
+  - trigger: "rslpd "
+    left_word: true
     label: "RS 235.1 - LPD"
-    markdown: "Loi fédérale sur la protection des données (ci-après LPD, [RS 235.1](https://www.fedlex.admin.ch/fr/cc/internal-law/235.1))"
+    markdown: "Loi fédérale sur la protection des données (ci-après LPD, [RS 235.1](https://www.fedlex.admin.ch/fr/cc/internal-law/235.1)) "
 
-  - trigger: "rslcd"
+  - trigger: "rslcd "
+    left_word: true
     label: "RS 241 - LCD"
-    markdown: "Loi fédérale contre la concurrence déloyale (ci-après LCD, [RS 241](https://www.fedlex.admin.ch/fr/cc/internal-law/241))"
+    markdown: "Loi fédérale contre la concurrence déloyale (ci-après LCD, [RS 241](https://www.fedlex.admin.ch/fr/cc/internal-law/241)) "
 
-  - trigger: "rsldip"
+  - trigger: "rsldip "
+    left_word: true
     label: "RS 291 - LDIP"
-    markdown: "Loi fédérale sur le droit international privé (ci-après LDIP, [RS 291](https://www.fedlex.admin.ch/fr/cc/internal-law/291))"
+    markdown: "Loi fédérale sur le droit international privé (ci-après LDIP, [RS 291](https://www.fedlex.admin.ch/fr/cc/internal-law/291)) "
 
-  - trigger: "rslei"
+  - trigger: "rslei "
+    left_word: true
     label: "RS 142.20 - LEI"
-    markdown: "Loi fédérale sur les étrangers et l'intégration (ci-après LEI, [RS 142.20](https://www.fedlex.admin.ch/fr/cc/internal-law/142.20))"
+    markdown: "Loi fédérale sur les étrangers et l'intégration (ci-après LEI, [RS 142.20](https://www.fedlex.admin.ch/fr/cc/internal-law/142.20)) "
 
-  - trigger: "rslasi"
+  - trigger: "rslasi "
+    left_word: true
     label: "RS 142.31 - LAsi"
-    markdown: "Loi sur l'asile (ci-après LAsi, [RS 142.31](https://www.fedlex.admin.ch/fr/cc/internal-law/142.31))"
+    markdown: "Loi sur l'asile (ci-après LAsi, [RS 142.31](https://www.fedlex.admin.ch/fr/cc/internal-law/142.31)) "
 
-  - trigger: "rslavi"
+  - trigger: "rslavi "
+    left_word: true
     label: "RS 312.5 - LAVI"
-    markdown: "Loi fédérale sur l'aide aux victimes d'infractions (ci-après LAVI, [RS 312.5](https://www.fedlex.admin.ch/fr/cc/internal-law/312.5))"
+    markdown: "Loi fédérale sur l'aide aux victimes d'infractions (ci-après LAVI, [RS 312.5](https://www.fedlex.admin.ch/fr/cc/internal-law/312.5)) "
 
-  - trigger: "rslarm"
+  - trigger: "rslarm "
+    left_word: true
     label: "RS 514.54 - LArm"
-    markdown: "Loi fédérale sur les armes, les accessoires d'armes et les munitions (ci-après LArm, [RS 514.54](https://www.fedlex.admin.ch/fr/cc/internal-law/514.54))"
+    markdown: "Loi fédérale sur les armes, les accessoires d'armes et les munitions (ci-après LArm, [RS 514.54](https://www.fedlex.admin.ch/fr/cc/internal-law/514.54)) "
 
-  - trigger: "rslcart"
+  - trigger: "rslcart "
+    left_word: true
     label: "RS 251 - LCart"
-    markdown: "Loi fédérale sur les cartels et autres restrictions à la concurrence (ci-après LCart, [RS 251](https://www.fedlex.admin.ch/fr/cc/internal-law/251))"
+    markdown: "Loi fédérale sur les cartels et autres restrictions à la concurrence (ci-après LCart, [RS 251](https://www.fedlex.admin.ch/fr/cc/internal-law/251)) "
 
-  - trigger: "rslp"
+  - trigger: "rslp "
+    left_word: true
     label: "RS 281.1 - LP"
-    markdown: "Loi fédérale sur la poursuite pour dettes et la faillite (ci-après LP, [RS 281.1](https://www.fedlex.admin.ch/fr/cc/internal-law/281.1))"
+    markdown: "Loi fédérale sur la poursuite pour dettes et la faillite (ci-après LP, [RS 281.1](https://www.fedlex.admin.ch/fr/cc/internal-law/281.1)) "
 
-  - trigger: "rslfaie"
+  - trigger: "rslfaie "
+    left_word: true
     label: "RS 211.412.41 - LFAIE"
-    markdown: "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (ci-après LFAIE, [RS 211.412.41](https://www.fedlex.admin.ch/fr/cc/internal-law/211.412.41))"
+    markdown: "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (ci-après LFAIE, [RS 211.412.41](https://www.fedlex.admin.ch/fr/cc/internal-law/211.412.41)) "
 
-  - trigger: "rslpart"
+  - trigger: "rslpart "
+    left_word: true
     label: "RS 211.231 - LPart"
-    markdown: "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (ci-après LPart, [RS 211.231](https://www.fedlex.admin.ch/fr/cc/internal-law/211.231))"
+    markdown: "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (ci-après LPart, [RS 211.231](https://www.fedlex.admin.ch/fr/cc/internal-law/211.231)) "
 
-  - trigger: "rsorfi"
+  - trigger: "rsorfi "
+    left_word: true
     label: "RS 281.42 - ORFI"
-    markdown: "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles (ci-après ORFI, [RS 281.42](https://www.fedlex.admin.ch/fr/cc/internal-law/281.42))"
+    markdown: "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles (ci-après ORFI, [RS 281.42](https://www.fedlex.admin.ch/fr/cc/internal-law/281.42)) "
 
-  - trigger: "rsoelp"
+  - trigger: "rsoelp "
+    left_word: true
     label: "RS 281.35 - OELP"
-    markdown: "Ordonnance sur les émoluments perçus en application de la LP (ci-après OELP, [RS 281.35](https://www.fedlex.admin.ch/fr/cc/internal-law/281.35))"
+    markdown: "Ordonnance sur les émoluments perçus en application de la LP (ci-après OELP, [RS 281.35](https://www.fedlex.admin.ch/fr/cc/internal-law/281.35)) "
 
-  - trigger: "rsobi"
+  - trigger: "rsobi "
+    left_word: true
     label: "RS 232.141 - OBI"
-    markdown: "Ordonnance sur les brevets d'invention (ci-après OBI, [RS 232.141](https://www.fedlex.admin.ch/fr/cc/internal-law/232.141))"
+    markdown: "Ordonnance sur les brevets d'invention (ci-après OBI, [RS 232.141](https://www.fedlex.admin.ch/fr/cc/internal-law/232.141)) "
 
-  - trigger: "rsltrans"
+  - trigger: "rsltrans "
+    left_word: true
     label: "RS 152.3 - LTrans"
-    markdown: "Loi fédérale sur le principe de la transparence dans l'administration (ci-après LTrans, [RS 152.3](https://www.fedlex.admin.ch/fr/cc/internal-law/152.3))"
+    markdown: "Loi fédérale sur le principe de la transparence dans l'administration (ci-après LTrans, [RS 152.3](https://www.fedlex.admin.ch/fr/cc/internal-law/152.3)) "
 
-  - trigger: "rslpp"
+  - trigger: "rslpp "
+    left_word: true
     label: "RS 831.40 - LPP"
-    markdown: "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après LPP, [RS 831.40](https://www.fedlex.admin.ch/fr/cc/internal-law/831.40))"
+    markdown: "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après LPP, [RS 831.40](https://www.fedlex.admin.ch/fr/cc/internal-law/831.40)) "
 
-  - trigger: "rsopp2"
+  - trigger: "rsopp2 "
+    left_word: true
     label: "RS 831.441.1 - OPP 2"
-    markdown: "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après OPP 2, [RS 831.441.1](https://www.fedlex.admin.ch/fr/cc/internal-law/831.441.1))"
+    markdown: "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après OPP 2, [RS 831.441.1](https://www.fedlex.admin.ch/fr/cc/internal-law/831.441.1)) "
 
-  - trigger: "rsolp"
+  - trigger: "rsolp "
+    left_word: true
     label: "RS 831.425 - OLP"
-    markdown: "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après OLP, [RS 831.425](https://www.fedlex.admin.ch/fr/cc/internal-law/831.425))"
+    markdown: "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après OLP, [RS 831.425](https://www.fedlex.admin.ch/fr/cc/internal-law/831.425)) "
 
-  - trigger: "rslflp"
+  - trigger: "rslflp "
+    left_word: true
     label: "RS 831.42 - LFLP"
-    markdown: "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après LFLP, [RS 831.42](https://www.fedlex.admin.ch/fr/cc/internal-law/831.42))"
+    markdown: "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (ci-après LFLP, [RS 831.42](https://www.fedlex.admin.ch/fr/cc/internal-law/831.42)) "
 
-  - trigger: "rslamal"
+  - trigger: "rslamal "
+    left_word: true
     label: "RS 832.10 - LAMal"
-    markdown: "Loi fédérale sur l'assurance-maladie (ci-après LAMal, [RS 832.10](https://www.fedlex.admin.ch/fr/cc/internal-law/832.10))"
+    markdown: "Loi fédérale sur l'assurance-maladie (ci-après LAMal, [RS 832.10](https://www.fedlex.admin.ch/fr/cc/internal-law/832.10)) "
 
-  - trigger: "rslca"
+  - trigger: "rslca "
+    left_word: true
     label: "RS 221.229.1 - LCA"
-    markdown: "Loi fédérale sur le contrat d'assurance (ci-après LCA, [RS 221.229.1](https://www.fedlex.admin.ch/fr/cc/internal-law/221.229.1))"
+    markdown: "Loi fédérale sur le contrat d'assurance (ci-après LCA, [RS 221.229.1](https://www.fedlex.admin.ch/fr/cc/internal-law/221.229.1)) "
 
-  - trigger: "rslpga"
+  - trigger: "rslpga "
+    left_word: true
     label: "RS 830.1 - LPGA"
-    markdown: "Loi fédérale sur la partie générale du droit des assurances sociales (ci-après LPGA, [RS 830.1](https://www.fedlex.admin.ch/fr/cc/internal-law/830.1))"
+    markdown: "Loi fédérale sur la partie générale du droit des assurances sociales (ci-après LPGA, [RS 830.1](https://www.fedlex.admin.ch/fr/cc/internal-law/830.1)) "
 
-  - trigger: "rslavs"
+  - trigger: "rslavs "
+    left_word: true
     label: "RS 831.10 - LAVS"
-    markdown: "Loi fédérale sur l'assurance-vieillesse et survivants (ci-après LAVS, [RS 831.10](https://www.fedlex.admin.ch/fr/cc/internal-law/831.10))"
+    markdown: "Loi fédérale sur l'assurance-vieillesse et survivants (ci-après LAVS, [RS 831.10](https://www.fedlex.admin.ch/fr/cc/internal-law/831.10)) "
 
-  - trigger: "rslai"
+  - trigger: "rslai "
+    left_word: true
     label: "RS 831.20 - LAI"
-    markdown: "Loi fédérale sur l'assurance-invalidité (ci-après LAI, [RS 831.20](https://www.fedlex.admin.ch/fr/cc/internal-law/831.20))"
+    markdown: "Loi fédérale sur l'assurance-invalidité (ci-après LAI, [RS 831.20](https://www.fedlex.admin.ch/fr/cc/internal-law/831.20)) "
 
-  - trigger: "rslpc"
+  - trigger: "rslpc "
+    left_word: true
     label: "RS 831.30 - LPC"
-    markdown: "Loi fédérale sur les prestations complémentaires à l'AVS et à l'AI (ci-après LPC, [RS 831.30](https://www.fedlex.admin.ch/fr/cc/internal-law/831.30))"
+    markdown: "Loi fédérale sur les prestations complémentaires à l'AVS et à l'AI (ci-après LPC, [RS 831.30](https://www.fedlex.admin.ch/fr/cc/internal-law/831.30)) "
 
-  - trigger: "rslpers"
+  - trigger: "rslpers "
+    left_word: true
     label: "RS 172.220.1 - LPers"
-    markdown: "Loi sur le personnel de la Confédération (ci-après LPers, [RS 172.220.1](https://www.fedlex.admin.ch/fr/cc/internal-law/172.220.1))"
+    markdown: "Loi sur le personnel de la Confédération (ci-après LPers, [RS 172.220.1](https://www.fedlex.admin.ch/fr/cc/internal-law/172.220.1)) "
 
-  - trigger: "rslcr"
+  - trigger: "rslcr "
+    left_word: true
     label: "RS 741.01 - LCR"
-    markdown: "Loi fédérale sur la circulation routière (ci-après LCR, [RS 741.01](https://www.fedlex.admin.ch/fr/cc/internal-law/741.01))"
+    markdown: "Loi fédérale sur la circulation routière (ci-après LCR, [RS 741.01](https://www.fedlex.admin.ch/fr/cc/internal-law/741.01)) "
 
-  - trigger: "rsocr"
+  - trigger: "rsocr "
+    left_word: true
     label: "RS 741.11 - OCR"
-    markdown: "Ordonnance sur les règles de la circulation routière (ci-après OCR, [RS 741.11](https://www.fedlex.admin.ch/fr/cc/internal-law/741.11))"
+    markdown: "Ordonnance sur les règles de la circulation routière (ci-après OCR, [RS 741.11](https://www.fedlex.admin.ch/fr/cc/internal-law/741.11)) "
 
-  - trigger: "rsoac"
+  - trigger: "rsoac "
+    left_word: true
     label: "RS 741.51 - OAC"
-    markdown: "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (ci-après OAC, [RS 741.51](https://www.fedlex.admin.ch/fr/cc/internal-law/741.51))"
+    markdown: "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (ci-après OAC, [RS 741.51](https://www.fedlex.admin.ch/fr/cc/internal-law/741.51)) "
 
-  - trigger: "rslifd"
+  - trigger: "rslifd "
+    left_word: true
     label: "RS 642.11 - LIFD"
-    markdown: "Loi fédérale sur l'impôt fédéral direct (ci-après LIFD, [RS 642.11](https://www.fedlex.admin.ch/fr/cc/internal-law/642.11))"
+    markdown: "Loi fédérale sur l'impôt fédéral direct (ci-après LIFD, [RS 642.11](https://www.fedlex.admin.ch/fr/cc/internal-law/642.11)) "
 
-  - trigger: "rslhid"
+  - trigger: "rslhid "
+    left_word: true
     label: "RS 642.14 - LHID"
-    markdown: "Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes (ci-après LHID, [RS 642.14](https://www.fedlex.admin.ch/fr/cc/internal-law/642.14))"
+    markdown: "Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes (ci-après LHID, [RS 642.14](https://www.fedlex.admin.ch/fr/cc/internal-law/642.14)) "
 
-  - trigger: "rsltva"
+  - trigger: "rsltva "
+    left_word: true
     label: "RS 641.20 - LTVA"
-    markdown: "Loi fédérale régissant la taxe sur la valeur ajoutée (ci-après LTVA, [RS 641.20](https://www.fedlex.admin.ch/fr/cc/internal-law/641.20))"
+    markdown: "Loi fédérale régissant la taxe sur la valeur ajoutée (ci-après LTVA, [RS 641.20](https://www.fedlex.admin.ch/fr/cc/internal-law/641.20)) "
 
-  - trigger: "rsco2"
+  - trigger: "rsco2 "
+    left_word: true
     label: "RS 641.71 - CO2"
-    markdown: "Loi fédérale sur la réduction des émissions de CO2 (ci-après CO2, [RS 641.71](https://www.fedlex.admin.ch/fr/cc/internal-law/641.71))"
+    markdown: "Loi fédérale sur la réduction des émissions de CO2 (ci-après CO2, [RS 641.71](https://www.fedlex.admin.ch/fr/cc/internal-law/641.71)) "
 
-  - trigger: "rsleaux"
+  - trigger: "rsleaux "
+    left_word: true
     label: "RS 814.20 - LEaux"
-    markdown: "Loi fédérale sur la protection des eaux (ci-après LEaux, [RS 814.20](https://www.fedlex.admin.ch/fr/cc/internal-law/814.20))"
+    markdown: "Loi fédérale sur la protection des eaux (ci-après LEaux, [RS 814.20](https://www.fedlex.admin.ch/fr/cc/internal-law/814.20)) "
 
-  - trigger: "rslpe"
+  - trigger: "rslpe "
+    left_word: true
     label: "RS 814.01 - LPE"
-    markdown: "Loi fédérale sur la protection de l'environnement (ci-après LPE, [RS 814.01](https://www.fedlex.admin.ch/fr/cc/internal-law/814.01))"
+    markdown: "Loi fédérale sur la protection de l'environnement (ci-après LPE, [RS 814.01](https://www.fedlex.admin.ch/fr/cc/internal-law/814.01)) "
 
-  - trigger: "rslat"
+  - trigger: "rslat "
+    left_word: true
     label: "RS 700 - LAT"
-    markdown: "Loi fédérale sur l'aménagement du territoire (ci-après LAT, [RS 700](https://www.fedlex.admin.ch/fr/cc/internal-law/700))"
+    markdown: "Loi fédérale sur l'aménagement du territoire (ci-après LAT, [RS 700](https://www.fedlex.admin.ch/fr/cc/internal-law/700)) "
 
-  - trigger: "rslfo"
+  - trigger: "rslfo "
+    left_word: true
     label: "RS 921.0 - LFo"
-    markdown: "Loi fédérale sur les forêts (ci-après LFo, [RS 921.0](https://www.fedlex.admin.ch/fr/cc/internal-law/921.0))"
+    markdown: "Loi fédérale sur les forêts (ci-après LFo, [RS 921.0](https://www.fedlex.admin.ch/fr/cc/internal-law/921.0)) "
 
-  - trigger: "rslchp"
+  - trigger: "rslchp "
+    left_word: true
     label: "RS 922.0 - LChP"
-    markdown: "Loi fédérale sur la chasse et la protection des mammifères et oiseaux sauvages (ci-après LChP, [RS 922.0](https://www.fedlex.admin.ch/fr/cc/internal-law/922.0))"
+    markdown: "Loi fédérale sur la chasse et la protection des mammifères et oiseaux sauvages (ci-après LChP, [RS 922.0](https://www.fedlex.admin.ch/fr/cc/internal-law/922.0)) "
 
-  - trigger: "rslpn"
+  - trigger: "rslpn "
+    left_word: true
     label: "RS 451 - LPN"
-    markdown: "Loi fédérale sur la protection de la nature et du paysage (ci-après LPN, [RS 451](https://www.fedlex.admin.ch/fr/cc/internal-law/451))"
+    markdown: "Loi fédérale sur la protection de la nature et du paysage (ci-après LPN, [RS 451](https://www.fedlex.admin.ch/fr/cc/internal-law/451)) "
 
-  - trigger: "rslaam"
+  - trigger: "rslaam "
+    left_word: true
     label: "RS 510.10 - LAAM"
-    markdown: "Loi fédérale sur l'armée et l'administration militaire (ci-après LAAM, [RS 510.10](https://www.fedlex.admin.ch/fr/cc/internal-law/510.10))"
+    markdown: "Loi fédérale sur l'armée et l'administration militaire (ci-après LAAM, [RS 510.10](https://www.fedlex.admin.ch/fr/cc/internal-law/510.10)) "
 
-  - trigger: "rslmp"
+  - trigger: "rslmp "
+    left_word: true
     label: "RS 172.056.1 - LMP"
-    markdown: "Loi fédérale sur les marchés publics (ci-après LMP, [RS 172.056.1](https://www.fedlex.admin.ch/fr/cc/internal-law/172.056.1))"
+    markdown: "Loi fédérale sur les marchés publics (ci-après LMP, [RS 172.056.1](https://www.fedlex.admin.ch/fr/cc/internal-law/172.056.1)) "
 
-  - trigger: "rslsa"
+  - trigger: "rslsa "
+    left_word: true
     label: "RS 961.01 - LSA"
-    markdown: "Loi sur la surveillance des assurances (ci-après LSA, [RS 961.01](https://www.fedlex.admin.ch/fr/cc/internal-law/961.01))"
+    markdown: "Loi sur la surveillance des assurances (ci-après LSA, [RS 961.01](https://www.fedlex.admin.ch/fr/cc/internal-law/961.01)) "
 
-  - trigger: "rslhand"
+  - trigger: "rslhand "
+    left_word: true
     label: "RS 151.3 - LHand"
-    markdown: "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (ci-après LHand, [RS 151.3](https://www.fedlex.admin.ch/fr/cc/internal-law/151.3))"
+    markdown: "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (ci-après LHand, [RS 151.3](https://www.fedlex.admin.ch/fr/cc/internal-law/151.3)) "
 
-  - trigger: "rscedh"
+  - trigger: "rscedh "
+    left_word: true
     label: "RS 0.101 - CEDH"
-    markdown: "Convention de sauvegarde des droits de l'homme et des libertés fondamentales (ci-après CEDH, [RS 0.101](https://www.fedlex.admin.ch/fr/cc/internal-law/0.101))"
+    markdown: "Convention de sauvegarde des droits de l'homme et des libertés fondamentales (ci-après CEDH, [RS 0.101](https://www.fedlex.admin.ch/fr/cc/internal-law/0.101)) "
 
-  - trigger: "rspacteonuii"
+  - trigger: "rspacteonuii "
+    left_word: true
     label: "RS 0.103.2 - Pacte ONU II"
-    markdown: "Pacte international relatif aux droits civils et politiques (ci-après Pacte ONU II, [RS 0.103.2](https://www.fedlex.admin.ch/fr/cc/internal-law/0.103.2))"
+    markdown: "Pacte international relatif aux droits civils et politiques (ci-après Pacte ONU II, [RS 0.103.2](https://www.fedlex.admin.ch/fr/cc/internal-law/0.103.2)) "
 
-  - trigger: "rspacteonui"
+  - trigger: "rspacteonui "
+    left_word: true
     label: "RS 0.103.1 - Pacte ONU I"
-    markdown: "Pacte international relatif aux droits économiques, sociaux et culturels (ci-après Pacte ONU I, [RS 0.103.1](https://www.fedlex.admin.ch/fr/cc/internal-law/0.103.1))"
+    markdown: "Pacte international relatif aux droits économiques, sociaux et culturels (ci-après Pacte ONU I, [RS 0.103.1](https://www.fedlex.admin.ch/fr/cc/internal-law/0.103.1)) "
 
-  - trigger: "rscvdt"
+  - trigger: "rscvdt "
+    left_word: true
     label: "RS 0.111 - CVDT"
-    markdown: "Convention de Vienne sur le droit des traités (ci-après CVDT, [RS 0.111](https://www.fedlex.admin.ch/fr/cc/internal-law/0.111))"
+    markdown: "Convention de Vienne sur le droit des traités (ci-après CVDT, [RS 0.111](https://www.fedlex.admin.ch/fr/cc/internal-law/0.111)) "
 
-  - trigger: "rscvrc"
+  - trigger: "rscvrc "
+    left_word: true
     label: "RS 0.191.02 - CVRC"
-    markdown: "Convention de Vienne sur les relations consulaires (ci-après CVRC, [RS 0.191.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.191.02))"
+    markdown: "Convention de Vienne sur les relations consulaires (ci-après CVRC, [RS 0.191.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.191.02)) "
 
-  - trigger: "rsconventiondistanbul"
+  - trigger: "rsconventiondistanbul "
+    left_word: true
     label: "RS 0.311.35 - Convention d'Istanbul"
-    markdown: "Convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (ci-après Convention d'Istanbul, [RS 0.311.35](https://www.fedlex.admin.ch/fr/cc/internal-law/0.311.35))"
+    markdown: "Convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (ci-après Convention d'Istanbul, [RS 0.311.35](https://www.fedlex.admin.ch/fr/cc/internal-law/0.311.35)) "
 
-  - trigger: "rsclah1980"
+  - trigger: "rsclah1980 "
+    left_word: true
     label: "RS 0.211.230.02 - CLaH 1980"
-    markdown: "Convention de La Haye sur les aspects civils de l'enlèvement international d'enfants (ci-après CLaH 1980, [RS 0.211.230.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.230.02))"
+    markdown: "Convention de La Haye sur les aspects civils de l'enlèvement international d'enfants (ci-après CLaH 1980, [RS 0.211.230.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.230.02)) "
 
-  - trigger: "rsclah1996"
+  - trigger: "rsclah1996 "
+    left_word: true
     label: "RS 0.211.231.011 - CLaH 1996"
-    markdown: "Convention de La Haye concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (ci-après CLaH 1996, [RS 0.211.231.011](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.231.011))"
+    markdown: "Convention de La Haye concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (ci-après CLaH 1996, [RS 0.211.231.011](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.231.011)) "
 
-  - trigger: "rsclahprotectionadultes"
+  - trigger: "rsclahprotectionadultes "
+    left_word: true
     label: "RS 0.211.232.1 - CLaH protection adultes"
-    markdown: "Convention de La Haye sur la protection internationale des adultes (ci-après CLaH protection adultes, [RS 0.211.232.1](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.232.1))"
+    markdown: "Convention de La Haye sur la protection internationale des adultes (ci-après CLaH protection adultes, [RS 0.211.232.1](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.232.1)) "
 
-  - trigger: "rsclahaliments"
+  - trigger: "rsclahaliments "
+    left_word: true
     label: "RS 0.211.213.02 - CLaH aliments"
-    markdown: "Convention de La Haye sur le recouvrement international des aliments destinés aux enfants et à d'autres membres de la famille (ci-après CLaH aliments, [RS 0.211.213.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.213.02))"
+    markdown: "Convention de La Haye sur le recouvrement international des aliments destinés aux enfants et à d'autres membres de la famille (ci-après CLaH aliments, [RS 0.211.213.02](https://www.fedlex.admin.ch/fr/cc/internal-law/0.211.213.02)) "
 
-  - trigger: "rsclahprocdurecivile"
+  - trigger: "rsclahprocdurecivile "
+    left_word: true
     label: "RS 0.274.12 - CLaH procédure civile"
-    markdown: "Convention de La Haye relative à la procédure civile (ci-après CLaH procédure civile, [RS 0.274.12](https://www.fedlex.admin.ch/fr/cc/internal-law/0.274.12))"
+    markdown: "Convention de La Haye relative à la procédure civile (ci-après CLaH procédure civile, [RS 0.274.12](https://www.fedlex.admin.ch/fr/cc/internal-law/0.274.12)) "
 
-  - trigger: "rsclahapostille"
+  - trigger: "rsclahapostille "
+    left_word: true
     label: "RS 0.172.030.4 - CLaH apostille"
-    markdown: "Convention de La Haye supprimant l'exigence de la légalisation des actes publics étrangers (ci-après CLaH apostille, [RS 0.172.030.4](https://www.fedlex.admin.ch/fr/cc/internal-law/0.172.030.4))"
+    markdown: "Convention de La Haye supprimant l'exigence de la légalisation des actes publics étrangers (ci-après CLaH apostille, [RS 0.172.030.4](https://www.fedlex.admin.ch/fr/cc/internal-law/0.172.030.4)) "
 
-  - trigger: "rscl"
+  - trigger: "rscl "
+    left_word: true
     label: "RS 0.275.12 - CL"
-    markdown: "Convention de Lugano concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (ci-après CL, [RS 0.275.12](https://www.fedlex.admin.ch/fr/cc/internal-law/0.275.12))"
+    markdown: "Convention de Lugano concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (ci-après CL, [RS 0.275.12](https://www.fedlex.admin.ch/fr/cc/internal-law/0.275.12)) "

@@ -12,6 +12,7 @@ import json
 import os
 import re
 import sys
+import subprocess
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
@@ -686,6 +687,7 @@ def write_outputs(laws: list[Law]) -> None:
     write_ruby(laws)
     write_yaml(laws, 'fr')
     write_yaml(laws, 'de')
+    subprocess.run(['ruby', str(ROOT / 'scripts/prepare_link_shortcuts.rb')], check=True)
 
 
 def main() -> None:
